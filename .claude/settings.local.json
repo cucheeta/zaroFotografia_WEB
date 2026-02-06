@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:victorlax.net)",
+      "WebFetch(domain:carlossantanatalia.com)",
+      "WebFetch(domain:www.jorgesastre.com)",
+      "mcp__magic__21st_magic_component_inspiration",
+      "Bash(dir:*)",
+      "Bash(npm install:*)",
+      "Bash(del \"C:\\\\Users\\\\hazna\\\\Desktop\\\\zaroFotografia_WEB\\\\src\\\\index.css\")",
+      "Bash(del \"C:\\\\Users\\\\hazna\\\\Desktop\\\\zaroFotografia_WEB\\\\src\\\\App.css\")",
+      "Bash(npx vite build:*)",
+      "Bash(curl:*)"
+    ]
+  }
+}
