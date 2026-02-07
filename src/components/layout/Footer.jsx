@@ -1,4 +1,5 @@
 import { contactData } from '../../constants/data'
+import logoZaro from '../../assets/images/LogoZaro.png'
 
 export default function Footer() {
   const scrollToTop = (e) => {
@@ -14,9 +15,13 @@ export default function Footer() {
           <a
             href="#"
             onClick={scrollToTop}
-            className="font-serif text-xl tracking-[0.3em] text-white transition-colors hover:text-gold"
+            className="transition-opacity hover:opacity-80"
           >
-            ZARO
+            <img
+              src={logoZaro}
+              alt="Ángel Zaro Fotografía"
+              className="h-8 w-auto invert"
+            />
           </a>
 
           {/* Social links */}

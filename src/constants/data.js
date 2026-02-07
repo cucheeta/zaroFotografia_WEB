@@ -17,6 +17,37 @@ export const heroImages = [
   },
 ]
 
+export const zoomParallaxImages = [
+  {
+    src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1280&h=720&fit=crop&q=80',
+    alt: 'Pareja en ceremonia de boda',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1280&h=720&fit=crop&q=80',
+    alt: 'Novios en el atardecer',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=800&h=800&fit=crop&q=80',
+    alt: 'Detalles de boda elegante',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1280&h=720&fit=crop&q=80',
+    alt: 'Boda al aire libre',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=800&fit=crop&q=80',
+    alt: 'Celebración de boda',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1280&h=720&fit=crop&q=80',
+    alt: 'Ramo de novia',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=1280&h=720&fit=crop&q=80',
+    alt: 'Pareja en sesión preboda',
+  },
+]
+
 export const portfolioCategories = ['Todas', 'Bodas', 'Prebodas', 'Detalles']
 
 export const portfolioImages = [

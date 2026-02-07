@@ -10,7 +10,10 @@
       "Bash(del \"C:\\\\Users\\\\hazna\\\\Desktop\\\\zaroFotografia_WEB\\\\src\\\\index.css\")",
       "Bash(del \"C:\\\\Users\\\\hazna\\\\Desktop\\\\zaroFotografia_WEB\\\\src\\\\App.css\")",
       "Bash(npx vite build:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm run build:*)",
+      "Bash(copy:*)"
     ]
   }
 }

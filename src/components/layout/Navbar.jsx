@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useScrollPosition } from '../../hooks/useScrollPosition'
 import { navLinks } from '../../constants/data'
 import { cn } from '../../utils/cn'
+import logoZaro from '../../assets/images/LogoZaro.png'
 
 export default function Navbar() {
   const scrollY = useScrollPosition()
@@ -33,9 +34,12 @@ export default function Navbar() {
             e.preventDefault()
             window.scrollTo({ top: 0, behavior: 'smooth' })
           }}
-          className="font-serif text-2xl tracking-[0.3em] text-white"
         >
-          ZARO
+          <img
+            src={logoZaro}
+            alt="Ángel Zaro Fotografía"
+            className="h-10 w-auto invert"
+          />
         </a>
 
         {/* Desktop nav */}
