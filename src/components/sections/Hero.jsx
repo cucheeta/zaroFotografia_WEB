@@ -33,7 +33,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.3 }}
           className="font-serif text-5xl font-light tracking-[0.2em] text-white md:text-7xl lg:text-8xl"
         >
-          Zaro
+          Ángel Zaro Fotografía
         </motion.h1>
         <motion.div
           initial={{ scaleX: 0 }}
@@ -63,7 +63,7 @@ export default function Hero() {
           transition={{ duration: 1.5, repeat: Infinity }}
           className="flex flex-col items-center gap-2"
         >
-          <span className="text-xs tracking-widest text-white/50">SCROLL</span>
+          <span className="text-xs tracking-widest text-white/50">Desliza</span>
           <div className="h-8 w-px bg-white/30" />
         </motion.div>
       </motion.div>

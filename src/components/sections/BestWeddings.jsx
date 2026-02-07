@@ -35,7 +35,7 @@ export default function Portfolio() {
             className="mb-16 text-center"
           >
             <h2 className="font-serif text-4xl text-charcoal md:text-5xl">
-              Portfolio
+              MIS MEJORES BODAS
             </h2>
             <div className="mx-auto mt-4 h-px w-16 bg-gold" />
           </motion.div>

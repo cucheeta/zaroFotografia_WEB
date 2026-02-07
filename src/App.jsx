@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import Lenis from 'lenis'
 import Navbar from './components/layout/Navbar'
 import Hero from './components/sections/Hero'
-import Portfolio from './components/sections/Portfolio'
+import BestWeddings from './components/sections/BestWeddings'
 import About from './components/sections/About'
 import Contact from './components/sections/Contact'
 import Footer from './components/layout/Footer'
@@ -26,8 +26,8 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <Portfolio />
         <About />
+        <BestWeddings />
         <Contact />
       </main>
       <Footer />

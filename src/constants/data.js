@@ -138,14 +138,15 @@ export const portfolioImages = [
 ]
 
 export const aboutData = {
-  image: 'https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=800&q=80',
-  title: 'Sobre Mí',
+  image: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=1000&q=80',
+  title: 'Nuestro trabajo',
   subtitle: 'Capturando momentos que duran para siempre',
   bio: [
     'Soy Zaro, fotógrafo de bodas con más de 10 años de experiencia capturando los momentos más especiales de tu vida. Mi pasión es contar historias a través de imágenes que transmitan la emoción y la belleza de cada instante.',
     'Cada boda es única, y mi objetivo es documentarla de manera auténtica y artística. Desde los preparativos hasta el último baile, estoy ahí para capturar cada sonrisa, cada lágrima de felicidad y cada momento de conexión.',
   ],
-  quote: '"La fotografía es el arte de capturar la luz del alma."',
+  quote: '"El día de la boda, consiguieron capturar cada momento sin ser intrusivos, todo lo contrario. Nuestra familia y amigos les adoraron tanto como nosotros, ¡casi se convirtieron en parte de la fiesta! Sus fotos son impresionantes."',
+  quoteAuthor: 'Laura & Carlos',
   stats: [
     { number: '+200', label: 'Bodas fotografiadas' },
     { number: '+10', label: 'Años de experiencia' },
@@ -154,18 +155,19 @@ export const aboutData = {
 }
 
 export const contactData = {
-  email: 'info@zarofotografia.com',
-  phone: '+34 600 123 456',
-  location: 'Madrid, España',
+  email: 'hola@angelzaro.com',
+  phone: '+34 676 149 492',
+  location: 'Zaragoza, España',
+  whatsapp: 'https://wa.me/34676149492',
   social: {
-    instagram: 'https://instagram.com/zarofotografia',
-    facebook: 'https://facebook.com/zarofotografia',
-    pinterest: 'https://pinterest.com/zarofotografia',
+    instagram: 'https://www.instagram.com/angelzarofotografia/',
+    facebook: 'https://www.facebook.com/AngelZaroFotografia/',
   },
 }
 
 export const navLinks = [
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Sobre Mí', href: '#about' },
+  { label: 'Inicio', href: '#hero' },
+  { label: 'Bodas Reales', href: '#portfolio' },
   { label: 'Contacto', href: '#contact' },
+  { label: 'Sobre Mí', href: '#about' },
 ]

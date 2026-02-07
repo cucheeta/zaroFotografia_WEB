@@ -15,12 +15,23 @@ export default function About() {
   return (
     <section
       id="about"
-      className="bg-charcoal py-20 text-white md:py-32"
+      className="bg-white py-20 text-charcoal md:py-32"
     >
       <div className="mx-auto max-w-7xl px-6">
+        {/* Big centered title */}
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          animate={sectionVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="mb-16 text-center font-serif text-3xl uppercase tracking-[0.15em] md:text-4xl lg:text-5xl"
+        >
+          {aboutData.title}
+        </motion.h2>
+
+        {/* Two columns: image | text */}
         <div
           ref={sectionRef}
-          className="grid items-center gap-12 md:grid-cols-2 md:gap-16"
+          className="grid items-start gap-12 md:grid-cols-2 md:gap-16 lg:gap-24"
         >
           {/* Image with parallax */}
           <motion.div
@@ -28,7 +39,7 @@ export default function About() {
             initial={{ opacity: 0, x: -40 }}
             animate={sectionVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="relative aspect-[3/4] overflow-hidden rounded"
+            className="relative aspect-[4/3] overflow-hidden"
           >
             <motion.img
               style={{ y: imageY }}
@@ -43,37 +54,43 @@ export default function About() {
             initial={{ opacity: 0, x: 40 }}
             animate={sectionVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex flex-col justify-center"
           >
-            <h2 className="font-serif text-4xl md:text-5xl">
-              {aboutData.title}
-            </h2>
-            <div className="mt-4 h-px w-16 bg-gold" />
-            <p className="mt-2 text-sm tracking-[0.3em] text-gold uppercase">
+            {/* Subtitle */}
+            <h3 className="font-serif text-sm uppercase tracking-[0.2em] text-charcoal/80 md:text-base">
               {aboutData.subtitle}
-            </p>
+            </h3>
 
+            {/* Bio */}
             {aboutData.bio.map((paragraph, i) => (
-              <p key={i} className="mt-6 leading-relaxed text-white/70">
+              <p key={i} className="mt-6 text-[15px] leading-relaxed text-charcoal/70">
                 {paragraph}
               </p>
             ))}
 
-            <blockquote className="mt-8 border-l-2 border-gold pl-4 font-serif text-lg leading-relaxed text-white/60 italic">
-              {aboutData.quote}
+            {/* Testimonial quote */}
+            <blockquote className="mt-10">
+              <p className="text-center font-serif text-[15px] leading-relaxed text-charcoal/80 italic">
+                {aboutData.quote}
+              </p>
+              {aboutData.quoteAuthor && (
+                <p className="mt-4 text-center font-serif text-sm tracking-wider text-charcoal/60">
+                  — {aboutData.quoteAuthor} —
+                </p>
+              )}
             </blockquote>
 
-            {/* Stats */}
-            <div className="mt-10 grid grid-cols-3 gap-6">
-              {aboutData.stats.map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <p className="font-serif text-3xl text-gold md:text-4xl">
-                    {stat.number}
-                  </p>
-                  <p className="mt-2 text-xs leading-tight tracking-wider text-white/50">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
+            <div className="mt-10 text-center">
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault()
+                  document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
+                }}
+                className="inline-block border border-charcoal/30 px-8 py-3 font-serif text-[13px] uppercase tracking-[0.15em] text-charcoal/80 transition-all duration-300 hover:bg-charcoal hover:text-white"
+              >
+                Conóceme
+              </a>
             </div>
           </motion.div>
         </div>
