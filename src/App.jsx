@@ -4,6 +4,7 @@ import Navbar from './components/layout/Navbar'
 import Hero from './components/sections/Hero'
 import BestWeddings from './components/sections/BestWeddings'
 import About from './components/sections/About'
+import VideoSection from './components/sections/VideoSection'
 import Contact from './components/sections/Contact'
 import Footer from './components/layout/Footer'
 
@@ -27,6 +28,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <VideoSection />
         <BestWeddings />
         <Contact />
       </main>

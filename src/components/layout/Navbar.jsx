@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useScrollPosition } from '../../hooks/useScrollPosition'
 import { navLinks, contactData } from '../../constants/data'
@@ -35,6 +35,23 @@ export default function Navbar() {
   const scrollY = useScrollPosition()
   const isScrolled = scrollY > 50
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [hidden, setHidden] = useState(false)
+
+  useEffect(() => {
+    const targets = document.querySelectorAll('[data-hide-navbar]')
+    if (!targets.length) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const anyVisible = entries.some((e) => e.isIntersecting)
+        setHidden(anyVisible)
+      },
+      { threshold: 0.15 }
+    )
+
+    targets.forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
+  }, [])
 
   const handleNavClick = (e, href) => {
     e.preventDefault()
@@ -47,6 +64,7 @@ export default function Navbar() {
     <nav
       className={cn(
         'fixed top-0 left-0 z-40 w-full transition-all duration-700',
+        hidden ? '-translate-y-full' : 'translate-y-0',
         isScrolled
           ? 'bg-white/95 backdrop-blur-md border-b border-black/5 shadow-sm'
           : 'bg-transparent'
