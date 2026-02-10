@@ -14,7 +14,18 @@
       "Bash(npm uninstall:*)",
       "Bash(npm run build:*)",
       "Bash(copy:*)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(git -C \"C:\\\\Users\\\\hazna\\\\Desktop\\\\zaroFotografia_WEB\" status)",
+      "Bash(git -C \"C:\\\\Users\\\\hazna\\\\Desktop\\\\zaroFotografia_WEB\" diff --stat)",
+      "Bash(git -C \"C:\\\\Users\\\\hazna\\\\Desktop\\\\zaroFotografia_WEB\" log --oneline -5)",
+      "Bash(git -C \"C:\\\\Users\\\\hazna\\\\Desktop\\\\zaroFotografia_WEB\" add package.json package-lock.json src/components/ui/Button.jsx src/components/ui/Carousel.jsx src/components/sections/BestWeddings.jsx src/constants/data.js src/styles/index.css)",
+      "Bash(git -C \"C:\\\\Users\\\\hazna\\\\Desktop\\\\zaroFotografia_WEB\" commit -m \"$\\(cat <<''EOF''\nCarousel Embla en seccion Mis Mejores Bodas\n\nReemplaza masonry grid + filtros por carousel Embla con 4 tarjetas\nde bodas destacadas presionables. Incluye autoplay, dots, progress\nbar y boton play/pause.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C \"C:\\\\Users\\\\hazna\\\\Desktop\\\\zaroFotografia_WEB\" push origin develop)",
+      "Bash(cmd /c \"del \\\\?\\\\C:\\\\Users\\\\hazna\\\\Desktop\\\\zaroFotografia_WEB\\\\NUL\")",
+      "Bash(git -C C:/Users/hazna/Desktop/zaroFotografia_WEB status)",
+      "Bash(cmd /c \"pushd C:\\\\Users\\\\hazna\\\\Desktop\\\\zaroFotografia_WEB && del /f /q \\\\?\\\\C:\\\\Users\\\\hazna\\\\Desktop\\\\zaroFotografia_WEB\\\\NUL && popd\")",
+      "Bash(cmd /c \"dir C:\\\\Users\\\\hazna\\\\Desktop\\\\zaroFotografia_WEB\\\\NUL\")",
+      "Bash(cmd /c \"if exist C:\\\\Users\\\\hazna\\\\Desktop\\\\zaroFotografia_WEB\\\\NUL echo EXISTS else echo NOEXIST\")"
     ]
   }
 }
