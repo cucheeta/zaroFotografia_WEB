@@ -49,3 +49,13 @@
   background: var(--color-gold);
   color: white;
 }
+
+/* Embla carousel autoplay progress */
+@keyframes autoplay-progress {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}

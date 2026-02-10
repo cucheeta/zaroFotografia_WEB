@@ -137,6 +137,37 @@ export const portfolioImages = [
   },
 ]
 
+export const weddingStories = [
+  {
+    id: 1,
+    title: 'María & Carlos',
+    location: 'Finca El Olivar, Madrid',
+    description: 'Una boda íntima rodeada de olivos centenarios y luz dorada del atardecer.',
+    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=900&h=600&fit=crop&q=80',
+  },
+  {
+    id: 2,
+    title: 'Ana & Javier',
+    location: 'Castillo de Viñuelas, Madrid',
+    description: 'Elegancia clásica en un castillo de ensueño con vistas a la sierra.',
+    image: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=900&h=600&fit=crop&q=80',
+  },
+  {
+    id: 3,
+    title: 'Sara & Miguel',
+    location: 'Jardín Botánico, Zaragoza',
+    description: 'Una celebración vibrante entre jardines en flor y risas sin fin.',
+    image: 'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=900&h=600&fit=crop&q=80',
+  },
+  {
+    id: 4,
+    title: 'Lucía & Andrés',
+    location: 'Playa de Bolonia, Cádiz',
+    description: 'Arena blanca, brisa marina y un amor que brilla con el sol del sur.',
+    image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=900&h=600&fit=crop&q=80',
+  },
+]
+
 export const aboutData = {
   image: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=1000&q=80',
   title: 'Nuestro trabajo',

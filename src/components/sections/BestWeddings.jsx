@@ -1,30 +1,47 @@
-import { useState, lazy, Suspense } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import MasonryGrid from '../ui/MasonryGrid'
+import { motion } from 'framer-motion'
+import { Carousel } from '../ui/Carousel'
 import ZoomParallax from '../ui/ZoomParallax'
-import { portfolioImages, portfolioCategories, zoomParallaxImages } from '../../constants/data'
-import { cn } from '../../utils/cn'
+import { weddingStories, zoomParallaxImages } from '../../constants/data'
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver'
 
-const ImageModal = lazy(() => import('../ui/ImageModal'))
+function WeddingCard({ story }) {
+  return (
+    <div className="group relative h-[280px] w-full cursor-pointer overflow-hidden rounded-lg select-none md:h-[340px]">
+      <img
+        src={story.image}
+        alt={story.title}
+        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 group-active:scale-100"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-all duration-500 group-hover:from-black/80" />
+      <div className="absolute bottom-0 w-full p-4 md:p-6">
+        <p className="mb-1 text-[10px] uppercase tracking-[0.25em] text-gold">
+          {story.location}
+        </p>
+        <h3 className="font-serif text-xl text-white md:text-2xl">
+          {story.title}
+        </h3>
+        <p className="mt-2 max-w-sm text-sm leading-relaxed text-white/70 opacity-0 translate-y-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+          {story.description}
+        </p>
+      </div>
+    </div>
+  )
+}
 
 export default function Portfolio() {
-  const [activeCategory, setActiveCategory] = useState('Todas')
-  const [selectedImage, setSelectedImage] = useState(null)
   const [titleRef, titleVisible] = useIntersectionObserver()
 
-  const filteredImages =
-    activeCategory === 'Todas'
-      ? portfolioImages
-      : portfolioImages.filter((img) => img.category === activeCategory)
+  const slides = weddingStories.map((story) => (
+    <WeddingCard key={story.id} story={story} />
+  ))
 
   return (
     <section id="portfolio" className="bg-cream">
       {/* Zoom parallax intro */}
       <ZoomParallax images={zoomParallaxImages} />
 
-      {/* Portfolio gallery */}
-      <div className="py-20 md:py-32">
+      {/* Wedding stories carousel */}
+      <div className="py-12 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           {/* Section header */}
           <motion.div
@@ -32,62 +49,21 @@ export default function Portfolio() {
             initial={{ opacity: 0, y: 30 }}
             animate={titleVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="mb-16 text-center"
+            className="mb-10 text-center"
           >
-            <h2 className="font-serif text-4xl text-charcoal md:text-5xl">
+            <h2 className="font-serif text-3xl text-charcoal md:text-4xl">
               MIS MEJORES BODAS
             </h2>
             <div className="mx-auto mt-4 h-px w-16 bg-gold" />
           </motion.div>
+        </div>
 
-          {/* Category filters */}
-          <div className="mb-12 flex flex-wrap justify-center gap-3">
-            {portfolioCategories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={cn(
-                  'relative px-6 py-2.5 text-sm tracking-widest transition-all duration-300',
-                  activeCategory === category
-                    ? 'bg-charcoal text-white'
-                    : 'bg-transparent text-charcoal/60 hover:text-charcoal'
-                )}
-              >
-                {category}
-                {activeCategory === category && (
-                  <motion.div
-                    layoutId="activeCategory"
-                    className="absolute inset-0 -z-10 bg-charcoal"
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                  />
-                )}
-              </button>
-            ))}
-          </div>
-
-          {/* Masonry gallery with animation on filter change */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeCategory}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3 }}
-            >
-              <MasonryGrid
-                images={filteredImages}
-                onImageClick={setSelectedImage}
-              />
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Lightbox modal */}
-          <Suspense fallback={null}>
-            <ImageModal
-              image={selectedImage}
-              onClose={() => setSelectedImage(null)}
-            />
-          </Suspense>
+        {/* Carousel - full width */}
+        <div className="mx-auto max-w-5xl px-6">
+          <Carousel
+            slides={slides}
+            options={{ loop: true, align: 'start' }}
+          />
         </div>
       </div>
     </section>
