@@ -185,6 +185,45 @@ export const aboutData = {
   ],
 }
 
+export const testimonials = [
+  {
+    id: 1,
+    text: 'Zaro no solo fotografió nuestra boda, capturó la esencia de lo que sentíamos. Cada vez que miramos las fotos, volvemos a vivir ese día mágico con la misma intensidad.',
+    name: 'María & Carlos',
+    location: 'Madrid',
+  },
+  {
+    id: 2,
+    text: 'Desde el primer momento nos transmitió una calma increíble. Se integró en la celebración como uno más y el resultado fue espectacular: fotos llenas de vida y emoción real.',
+    name: 'Ana & Javier',
+    location: 'Madrid',
+  },
+  {
+    id: 3,
+    text: 'Las fotos de nuestra boda son una obra de arte. Zaro tiene un don para encontrar la luz perfecta y los momentos que pasan desapercibidos pero que lo significan todo.',
+    name: 'Sara & Miguel',
+    location: 'Zaragoza',
+  },
+  {
+    id: 4,
+    text: 'No podríamos estar más agradecidos. Cada imagen cuenta una historia, cada detalle está cuidado con mimo. Es como tener un álbum de recuerdos eterno.',
+    name: 'Lucía & Andrés',
+    location: 'Cádiz',
+  },
+  {
+    id: 5,
+    text: 'Nos hizo sentir tan cómodos que ni notábamos la cámara. El día voló, pero gracias a él tenemos cada risa, cada abrazo y cada lágrima guardados para siempre.',
+    name: 'Elena & Pablo',
+    location: 'Barcelona',
+  },
+  {
+    id: 6,
+    text: 'Profesional, cercano y con un ojo artístico brutal. Las fotos superaron todas nuestras expectativas. Nuestros invitados aún nos preguntan quién fue el fotógrafo.',
+    name: 'Carmen & Sergio',
+    location: 'Sevilla',
+  },
+]
+
 export const contactData = {
   email: 'hola@angelzaro.com',
   phone: '+34 676 149 492',
