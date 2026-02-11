@@ -30,18 +30,13 @@
   }
 }
 
-/* Custom scrollbar */
+/* Hide scrollbar */
+html {
+  scrollbar-width: none; /* Firefox */
+}
+
 ::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-charcoal);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-gold);
-  border-radius: 4px;
+  display: none; /* Chrome, Safari, Edge */
 }
 
 /* Selection color */
