@@ -77,7 +77,7 @@ export default function Testimonials() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 1.2 }}
         className="mx-auto mb-14 max-w-7xl px-6 text-center"
       >
         <h2 className="mt-4 font-serif text-3xl text-cream md:text-4xl">
