@@ -1,46 +1,20 @@
 import { motion } from 'framer-motion'
-import { Carousel } from '../ui/Carousel'
+import ExpandableGallery from '../ui/ExpandableGallery'
 import ZoomParallax from '../ui/ZoomParallax'
 import { weddingStories, zoomParallaxImages } from '../../constants/data'
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver'
 
-function WeddingCard({ story }) {
-  return (
-    <div className="group relative h-[280px] w-full cursor-pointer overflow-hidden rounded-lg select-none md:h-[340px]">
-      <img
-        src={story.image}
-        alt={story.title}
-        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 group-active:scale-100"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-all duration-500 group-hover:from-black/80" />
-      <div className="absolute bottom-0 w-full p-4 md:p-6">
-        <p className="mb-1 text-[10px] uppercase tracking-[0.25em] text-gold">
-          {story.location}
-        </p>
-        <h3 className="font-serif text-xl text-white md:text-2xl">
-          {story.title}
-        </h3>
-        <p className="mt-2 max-w-sm text-sm leading-relaxed text-white/70 opacity-0 translate-y-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-          {story.description}
-        </p>
-      </div>
-    </div>
-  )
-}
-
 export default function Portfolio() {
   const [titleRef, titleVisible] = useIntersectionObserver()
 
-  const slides = weddingStories.map((story) => (
-    <WeddingCard key={story.id} story={story} />
-  ))
+  const galleryImages = weddingStories.map((story) => story.image)
 
   return (
     <section id="portfolio" className="bg-cream">
       {/* Zoom parallax intro */}
       <ZoomParallax images={zoomParallaxImages} />
 
-      {/* Wedding stories carousel */}
+      {/* Wedding stories gallery */}
       <div className="py-12 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           {/* Section header */}
@@ -58,11 +32,11 @@ export default function Portfolio() {
           </motion.div>
         </div>
 
-        {/* Carousel - full width */}
-        <div className="mx-auto max-w-5xl px-6">
-          <Carousel
-            slides={slides}
-            options={{ loop: true, align: 'start' }}
+        {/* Expandable Gallery */}
+        <div className="mx-auto max-w-6xl px-6">
+          <ExpandableGallery
+            images={galleryImages}
+            className="w-full"
           />
         </div>
       </div>
