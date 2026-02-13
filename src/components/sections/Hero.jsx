@@ -13,7 +13,7 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
 
   return (
-    <section ref={ref} className="relative h-screen overflow-hidden">
+    <section ref={ref} className="relative h-dvh overflow-hidden">
       {/* Background slider with parallax */}
       <motion.div style={{ y }} className="absolute inset-0">
         <ImageSlider images={heroImages} interval={6000} />
