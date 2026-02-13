@@ -3,7 +3,7 @@ import { contactData } from '../../constants/data'
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver'
 
 const BG_IMAGE =
-  'https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80'
+  'https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=1920&q=80'
 
 export default function Contact() {
   const [ref, isVisible] = useIntersectionObserver()
