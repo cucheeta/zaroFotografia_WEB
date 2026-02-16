@@ -1,10 +1,28 @@
+import { useNavigate, useLocation } from 'react-router-dom'
 import { contactData, navLinks } from '../../constants/data'
 import logoZaro from '../../assets/images/LogoZaro.png'
 
 export default function Footer() {
+  const navigate = useNavigate()
+  const location = useLocation()
+
   const scrollToTop = (e) => {
     e.preventDefault()
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    if (location.pathname !== '/') {
+      navigate('/')
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault()
+    if (location.pathname !== '/') {
+      navigate('/' + href)
+    } else {
+      const el = document.querySelector(href)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   return (
@@ -22,6 +40,7 @@ export default function Footer() {
                 <a
                   key={link.href}
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="text-xs tracking-wider transition-colors duration-300 hover:text-gold"
                 >
                   {link.label}

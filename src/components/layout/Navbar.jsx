@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useScrollPosition } from '../../hooks/useScrollPosition'
 import { navLinks, contactData } from '../../constants/data'
@@ -36,6 +37,8 @@ export default function Navbar() {
   const isScrolled = scrollY > 50
   const [mobileOpen, setMobileOpen] = useState(false)
   const [hidden, setHidden] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
 
   useEffect(() => {
     const targets = document.querySelectorAll('[data-hide-navbar]')
@@ -56,8 +59,22 @@ export default function Navbar() {
   const handleNavClick = (e, href) => {
     e.preventDefault()
     setMobileOpen(false)
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+
+    if (location.pathname !== '/') {
+      navigate('/' + href)
+    } else {
+      const el = document.querySelector(href)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  const handleLogoClick = (e) => {
+    e.preventDefault()
+    if (location.pathname !== '/') {
+      navigate('/')
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
   }
 
   return (
@@ -109,10 +126,7 @@ export default function Navbar() {
           <div className="flex justify-center">
             <a
               href="#"
-              onClick={(e) => {
-                e.preventDefault()
-                window.scrollTo({ top: 0, behavior: 'smooth' })
-              }}
+              onClick={handleLogoClick}
             >
               <img
                 src={logoZaro}
@@ -149,10 +163,7 @@ export default function Navbar() {
       <div className="flex items-center justify-between px-6 py-4 md:hidden">
         <a
           href="#"
-          onClick={(e) => {
-            e.preventDefault()
-            window.scrollTo({ top: 0, behavior: 'smooth' })
-          }}
+          onClick={handleLogoClick}
         >
           <img
             src={logoZaro}

@@ -1,13 +1,11 @@
-import { useEffect } from 'react'
+import { useEffect, lazy, Suspense } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Lenis from 'lenis'
 import Navbar from './components/layout/Navbar'
-import Hero from './components/sections/Hero'
-import BestWeddings from './components/sections/BestWeddings'
-import About from './components/sections/About'
-import VideoSection from './components/sections/VideoSection'
-import Testimonials from './components/sections/Testimonials'
-import Contact from './components/sections/Contact'
 import Footer from './components/layout/Footer'
+import HomePage from './pages/HomePage'
+
+const WeddingDetail = lazy(() => import('./pages/WeddingDetail'))
 
 function App() {
   useEffect(() => {
@@ -27,12 +25,12 @@ function App() {
     <>
       <Navbar />
       <main>
-        <Hero />
-        <About />
-        <VideoSection />
-        <BestWeddings />
-        <Testimonials />
-        <Contact />
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/boda/:slug" element={<WeddingDetail />} />
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
     </>
