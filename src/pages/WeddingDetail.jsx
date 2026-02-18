@@ -103,7 +103,7 @@ export default function WeddingDetail() {
           initial={{ opacity: 0, y: 30 }}
           animate={galleryVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="w-full"
+          className="mx-auto w-[75%]"
         >
           <h2 className="mb-10 text-center font-serif text-2xl text-charcoal md:text-3xl">
             Galería

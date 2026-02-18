@@ -1,77 +1,74 @@
-import { motion } from 'framer-motion'
-import { useIntersectionObserver } from '../../hooks/useIntersectionObserver'
+import { useRef, useState } from 'react'
+import { useInView } from 'framer-motion'
+import { cn } from '../../utils/cn'
 
-function GalleryImage({ image, index, onClick }) {
-  const [ref, isVisible] = useIntersectionObserver()
+// Deterministic portrait/landscape pattern per column for visual variety
+const RATIO_PATTERN = [
+  [9 / 16, 16 / 9, 9 / 16, 16 / 9, 9 / 16, 16 / 9],
+  [16 / 9, 9 / 16, 16 / 9, 9 / 16, 16 / 9, 9 / 16],
+  [9 / 16, 16 / 9, 16 / 9, 9 / 16, 9 / 16, 16 / 9],
+]
+
+function distributeToColumns(images, numCols) {
+  const columns = Array.from({ length: numCols }, () => [])
+  images.forEach((img, i) => {
+    columns[i % numCols].push(img)
+  })
+  return columns
+}
+
+function AnimatedImage({ image, colIndex, rowIndex, onClick }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+  const [isLoading, setIsLoading] = useState(true)
+
+  const ratio = RATIO_PATTERN[colIndex % 3][rowIndex % 6]
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial={{ opacity: 0, y: 40 }}
-      animate={isVisible ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
-      className="cursor-pointer overflow-hidden"
+      className="relative w-full cursor-pointer overflow-hidden rounded-lg"
+      style={{ aspectRatio: ratio }}
       onClick={() => onClick(image)}
     >
       <img
         src={image.url}
         alt={image.title}
         loading="lazy"
-        className="w-full max-h-[50vh] object-cover transition-transform duration-700 ease-out hover:scale-[1.02]"
+        onLoad={() => setIsLoading(false)}
+        className={cn(
+          'absolute inset-0 h-full w-full rounded-lg object-cover transition-all duration-1000 ease-in-out',
+          isInView && !isLoading ? 'opacity-100 scale-100' : 'opacity-0 scale-[1.02]',
+        )}
       />
-    </motion.div>
+      <div
+        className={cn(
+          'absolute inset-0 rounded-lg bg-charcoal/5 transition-opacity duration-500',
+          isInView && !isLoading ? 'opacity-0' : 'opacity-100',
+        )}
+      />
+    </div>
   )
 }
 
 export default function AsymmetricGrid({ images, onImageClick }) {
-  // Pattern: full-width, pair, full-width, pair, ...
-  // Groups images into rows following Jorge Sastre editorial style
-  const rows = []
-  let i = 0
-
-  while (i < images.length) {
-    // Odd row index → full width
-    if (rows.length % 3 === 0) {
-      rows.push({ type: 'full', images: [images[i]] })
-      i += 1
-    // Even row index → pair side by side
-    } else if (rows.length % 3 === 1 && i + 1 < images.length) {
-      rows.push({ type: 'pair', images: [images[i], images[i + 1]] })
-      i += 2
-    // Third → full width again
-    } else {
-      rows.push({ type: 'full', images: [images[i]] })
-      i += 1
-    }
-  }
+  const columns = distributeToColumns(images, 3)
 
   return (
-    <div className="flex flex-col gap-1 md:gap-2">
-      {rows.map((row, rowIndex) => {
-        if (row.type === 'full') {
-          return (
-            <GalleryImage
-              key={row.images[0].id}
-              image={row.images[0]}
-              index={rowIndex}
+    <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {columns.map((colImages, colIndex) => (
+        <div key={colIndex} className="grid gap-4">
+          {colImages.map((image, rowIndex) => (
+            <AnimatedImage
+              key={image.id}
+              image={image}
+              colIndex={colIndex}
+              rowIndex={rowIndex}
               onClick={onImageClick}
             />
-          )
-        }
-
-        return (
-          <div key={`pair-${rowIndex}`} className="grid grid-cols-2 gap-1 md:gap-2">
-            {row.images.map((image) => (
-              <GalleryImage
-                key={image.id}
-                image={image}
-                index={rowIndex}
-                onClick={onImageClick}
-              />
-            ))}
-          </div>
-        )
-      })}
+          ))}
+        </div>
+      ))}
     </div>
   )
 }

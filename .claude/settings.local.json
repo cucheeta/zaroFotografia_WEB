@@ -26,7 +26,12 @@
       "Bash(cmd /c \"pushd C:\\\\Users\\\\hazna\\\\Desktop\\\\zaroFotografia_WEB && del /f /q \\\\?\\\\C:\\\\Users\\\\hazna\\\\Desktop\\\\zaroFotografia_WEB\\\\NUL && popd\")",
       "Bash(cmd /c \"dir C:\\\\Users\\\\hazna\\\\Desktop\\\\zaroFotografia_WEB\\\\NUL\")",
       "Bash(cmd /c \"if exist C:\\\\Users\\\\hazna\\\\Desktop\\\\zaroFotografia_WEB\\\\NUL echo EXISTS else echo NOEXIST\")",
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:unsplash.com)",
+      "Bash(for slug in HIw5gIcoJoo yoDqYZZQ9lc)",
+      "Bash(do echo \"Trying slug: $slug\")",
+      "Bash(done)",
+      "Bash(for slug in LkZ6d_pqlfo AQ3kBWdhH2Y 7deMqsYQSV0)"
     ]
   }
 }
