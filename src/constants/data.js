@@ -307,5 +307,5 @@ export const navLinks = [
   { label: 'Inicio', href: '#hero' },
   { label: 'Bodas Reales', href: '#portfolio' },
   { label: 'Contacto', href: '#contact' },
-  { label: 'Sobre Mí', href: '#about' },
+  { label: 'Sobre Mí', href: '/sobre-mi' },
 ]

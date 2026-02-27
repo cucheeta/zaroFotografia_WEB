@@ -60,7 +60,9 @@ export default function Navbar() {
     e.preventDefault()
     setMobileOpen(false)
 
-    if (location.pathname !== '/') {
+    if (href.startsWith('/')) {
+      navigate(href)
+    } else if (location.pathname !== '/') {
       navigate('/' + href)
     } else {
       const el = document.querySelector(href)
