@@ -122,7 +122,7 @@ export default function WeddingDetail() {
             className="inline-flex items-center gap-2 font-serif text-sm uppercase tracking-[0.15em] text-charcoal/60 transition-colors duration-300 hover:text-gold"
           >
             <ArrowLeft size={16} />
-            Volver a bodas
+            Volver a la pagina principal
           </Link>
         </div>
       </section>

@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage'
 
 const WeddingDetail = lazy(() => import('./pages/WeddingDetail'))
 const AboutPage = lazy(() => import('./pages/AboutPage'))
+const RealWeddingsPage = lazy(() => import('./pages/RealWeddingsPage'))
 
 function ScrollToTop({ lenisRef }) {
   const { pathname } = useLocation()
@@ -44,6 +45,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/boda/:slug" element={<WeddingDetail />} />
+            <Route path="/bodas-reales" element={<RealWeddingsPage />} />
             <Route path="/sobre-mi" element={<AboutPage />} />
           </Routes>
         </Suspense>

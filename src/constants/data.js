@@ -211,6 +211,78 @@ export const weddingStories = [
     ],
   },
   {
+    id: 5,
+    slug: 'elena-pablo',
+    title: 'Elena & Pablo',
+    location: 'Mas de Sant Lleí, Barcelona',
+    description: 'Entre viñedos y luz mediterránea, una boda que respiraba calma y elegancia.',
+    fullDescription:
+      'Elena y Pablo eligieron una masía del siglo XVIII en el corazón del Penedès para dar el sí quiero. Entre viñedos dorados y paredes de piedra, la ceremonia civil tuvo lugar en el jardín interior mientras el sol de septiembre lo iluminaba todo. Una boda íntima, con pocos invitados pero mucho amor, donde cada detalle artesanal contaba una historia. Las risas, los abrazos y la música en directo hicieron de este día algo absolutamente irrepetible.',
+    image: 'https://images.unsplash.com/photo-1544078751-58fee2d8a03b?w=900&h=600&fit=crop&q=80',
+    gallery: [
+      { id: 501, url: 'https://images.unsplash.com/photo-1544078751-58fee2d8a03b?w=1200&q=80', fullUrl: 'https://images.unsplash.com/photo-1544078751-58fee2d8a03b?w=1920&q=90', title: 'Masía catalana' },
+      { id: 502, url: 'https://images.unsplash.com/photo-1679937698873-6065742c8d32?w=800&q=80', fullUrl: 'https://images.unsplash.com/photo-1679937698873-6065742c8d32?w=1600&q=90', title: 'Preparativos' },
+      { id: 503, url: 'https://images.unsplash.com/photo-1515626553181-0f218cb03f14?w=800&q=80', fullUrl: 'https://images.unsplash.com/photo-1515626553181-0f218cb03f14?w=1600&q=90', title: 'Anillos' },
+      { id: 504, url: 'https://images.unsplash.com/photo-1530738668449-74a0ef8c17ff?w=800&q=80', fullUrl: 'https://images.unsplash.com/photo-1530738668449-74a0ef8c17ff?w=1600&q=90', title: 'Ramo' },
+      { id: 505, url: 'https://images.unsplash.com/photo-1595407753234-0882f1e77954?w=800&q=80', fullUrl: 'https://images.unsplash.com/photo-1595407753234-0882f1e77954?w=1600&q=90', title: 'Los novios' },
+      { id: 506, url: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&q=80', fullUrl: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1600&q=90', title: 'Banquete' },
+    ],
+  },
+  {
+    id: 6,
+    slug: 'carmen-sergio',
+    title: 'Carmen & Sergio',
+    location: 'Hacienda El Vizir, Sevilla',
+    description: 'Flamenco, azahar y una pasión que llenó cada rincón de la hacienda.',
+    fullDescription:
+      'Carmen y Sergio celebraron su amor en una hacienda sevillana llena de historia y carácter. El olor a azahar, los patios encalados y la música flamenca en vivo convirtieron su boda en una fiesta de los sentidos. La novia, radiante con su vestido de corte romántico, entró al altar mientras las palmas de los invitados marcaban el ritmo. Una boda con alma andaluza, calor humano y una alegría desbordante que se prolongó hasta el amanecer.',
+    image: 'https://images.unsplash.com/photo-1529636798458-92182e662485?w=900&h=600&fit=crop&q=80',
+    gallery: [
+      { id: 601, url: 'https://images.unsplash.com/photo-1529636798458-92182e662485?w=1200&q=80', fullUrl: 'https://images.unsplash.com/photo-1529636798458-92182e662485?w=1920&q=90', title: 'Hacienda sevillana' },
+      { id: 602, url: 'https://images.unsplash.com/photo-1682226335318-f1911fdef7c1?w=800&q=80', fullUrl: 'https://images.unsplash.com/photo-1682226335318-f1911fdef7c1?w=1600&q=90', title: 'El vestido' },
+      { id: 603, url: 'https://images.unsplash.com/photo-1508366269523-8a49e3d6b32e?w=800&q=80', fullUrl: 'https://images.unsplash.com/photo-1508366269523-8a49e3d6b32e?w=1600&q=90', title: 'Flores' },
+      { id: 604, url: 'https://images.unsplash.com/photo-1578632297758-3a6c6de14be8?w=800&q=80', fullUrl: 'https://images.unsplash.com/photo-1578632297758-3a6c6de14be8?w=1600&q=90', title: 'Alianzas' },
+      { id: 605, url: 'https://images.unsplash.com/photo-1533120921505-7f40f5237ee1?w=800&q=80', fullUrl: 'https://images.unsplash.com/photo-1533120921505-7f40f5237ee1?w=1600&q=90', title: 'Decoración' },
+      { id: 606, url: 'https://images.unsplash.com/photo-1706742896961-622b668f0c19?w=800&q=80', fullUrl: 'https://images.unsplash.com/photo-1706742896961-622b668f0c19?w=1600&q=90', title: 'Baile' },
+    ],
+  },
+  {
+    id: 7,
+    slug: 'marta-raul',
+    title: 'Marta & Raúl',
+    location: 'Palacio de Ivanrey, Madrid',
+    description: 'Un palacio, dos almas y una tarde de octubre que pareció eterna.',
+    fullDescription:
+      'Marta y Raúl apostaron por la grandiosidad del Palacio de Ivanrey para su boda de otoño. Los tonos cálidos de octubre se fundieron con la arquitectura señorial del edificio creando un escenario de cuento. La ceremonia religiosa emocionó hasta las lágrimas a todos los presentes, y el banquete posterior fue un festín de elegancia y buen gusto. Cada fotografía de ese día refleja la complicidad y la profundidad del amor de esta pareja extraordinaria.',
+    image: 'https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=900&h=600&fit=crop&q=80',
+    gallery: [
+      { id: 701, url: 'https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=1200&q=80', fullUrl: 'https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=1920&q=90', title: 'Palacio de otoño' },
+      { id: 702, url: 'https://images.unsplash.com/photo-1632920665156-c84f643fcb37?w=800&q=80', fullUrl: 'https://images.unsplash.com/photo-1632920665156-c84f643fcb37?w=1600&q=90', title: 'Preparativos' },
+      { id: 703, url: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=800&q=80', fullUrl: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=1600&q=90', title: 'Alianzas' },
+      { id: 704, url: 'https://images.unsplash.com/photo-1521543832500-49e69fb2bea2?w=800&q=80', fullUrl: 'https://images.unsplash.com/photo-1521543832500-49e69fb2bea2?w=1600&q=90', title: 'Ramo' },
+      { id: 705, url: 'https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=800&q=80', fullUrl: 'https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=1600&q=90', title: 'Altar' },
+      { id: 706, url: 'https://images.unsplash.com/photo-1647979898663-517cb7721464?w=800&q=80', fullUrl: 'https://images.unsplash.com/photo-1647979898663-517cb7721464?w=1600&q=90', title: 'Mesa de gala' },
+    ],
+  },
+  {
+    id: 8,
+    slug: 'sofia-marcos',
+    title: 'Sofía & Marcos',
+    location: 'Finca La Cañada, Valencia',
+    description: 'Naranjos en flor, luz de levante y una boda que olía a primavera.',
+    fullDescription:
+      'Sofía y Marcos se dieron el sí quiero en una finca valenciana rodeada de naranjos en flor. La fragancia del azahar impregnaba el aire mientras los novios intercambiaban sus votos bajo un arco de flores silvestres. La luz característica del levante español bañó cada rincón con una calidez dorada que hizo que cada fotografía pareciera pintada. Una celebración íntima y llena de detalles artesanales que reflejaban a la perfección la personalidad de esta pareja tan especial.',
+    image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=900&h=600&fit=crop&q=80',
+    gallery: [
+      { id: 801, url: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&q=80', fullUrl: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1920&q=90', title: 'Finca valenciana' },
+      { id: 802, url: 'https://images.unsplash.com/photo-1739526169714-10141479601d?w=800&q=80', fullUrl: 'https://images.unsplash.com/photo-1739526169714-10141479601d?w=1600&q=90', title: 'Preparativos' },
+      { id: 803, url: 'https://images.unsplash.com/photo-1550005809-91ad75fb315f?w=800&q=80', fullUrl: 'https://images.unsplash.com/photo-1550005809-91ad75fb315f?w=1600&q=90', title: 'Ramo bohemio' },
+      { id: 804, url: 'https://images.unsplash.com/photo-1604531826248-f0eca8eeb896?w=800&q=80', fullUrl: 'https://images.unsplash.com/photo-1604531826248-f0eca8eeb896?w=1600&q=90', title: 'El novio' },
+      { id: 805, url: 'https://images.unsplash.com/photo-1519307212971-dd9561667ffb?w=800&q=80', fullUrl: 'https://images.unsplash.com/photo-1519307212971-dd9561667ffb?w=1600&q=90', title: 'Atardecer' },
+      { id: 806, url: 'https://images.unsplash.com/photo-1562050147-fda1cc9a6378?w=800&q=80', fullUrl: 'https://images.unsplash.com/photo-1562050147-fda1cc9a6378?w=1600&q=90', title: 'Banquete exterior' },
+    ],
+  },
+  {
     id: 4,
     slug: 'lucia-andres',
     title: 'Lucía & Andrés',
@@ -305,7 +377,7 @@ export const contactData = {
 
 export const navLinks = [
   { label: 'Inicio', href: '#hero' },
-  { label: 'Bodas Reales', href: '#portfolio' },
+  { label: 'Bodas Reales', href: '/bodas-reales' },
   { label: 'Contacto', href: '#contact' },
   { label: 'Sobre Mí', href: '/sobre-mi' },
 ]
